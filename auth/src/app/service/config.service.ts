@@ -14,6 +14,7 @@ export class ConfigService {
     {text: 'Home', href: '/'},
     {text: 'Users', href: '/users'},
     {text: 'Login', href: '/login'},
+    {text: 'Registration', href: '/register'},
   ];
 
   constructor() { }

@@ -1,3 +1,13 @@
 {
-  "users": []
+  "users": [
+    {
+      "email": "cf@gmail.com",
+      "password": "$2a$10$EUhEax5E2.BJlqVgc213/eG7/hsfuj6XaPK8CW2T18a8ZjvXjM4ge",
+      "id": 1,
+      "firstName": "Charlie",
+      "lastName": "Firpo",
+      "role": 0,
+      "token": ""
+    }
+  ]
 }
