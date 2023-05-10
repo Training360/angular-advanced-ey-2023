@@ -8,6 +8,15 @@
       "lastName": "Firpo",
       "role": 0,
       "token": ""
+    },
+    {
+      "email": "johnny@gmail.com",
+      "password": "$2a$10$.qKgedkdbp0JgBOnpF.ibO/njqoD6Tn6Ge5xru3SPopMnAbdgIS8G",
+      "id": 2,
+      "firstName": "Johnny",
+      "lastName": "Firpo",
+      "role": 0,
+      "token": ""
     }
   ]
 }

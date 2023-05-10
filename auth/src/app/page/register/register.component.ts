@@ -17,9 +17,11 @@ export class RegisterComponent {
   regUser: User = new User();
 
   onSave(user: User): void {
-    this.userService.create(user).subscribe(
-      user => this.router.navigate(['/users'])
-    );
+    this.userService.create(user).subscribe({
+      next: user => this.router.navigate(['/users']),
+      error: err => console.error(err),
+      complete: () => console.log('Observable closed the source.'),
+    });
   }
 
 }
