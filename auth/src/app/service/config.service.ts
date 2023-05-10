@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 export interface INavItem {
   text: string;
   href: string;
+  isLogin?: boolean;
 }
 
 @Injectable({
@@ -11,9 +12,9 @@ export interface INavItem {
 export class ConfigService {
 
   navItems: INavItem[] = [
-    {text: 'Home', href: '/'},
-    {text: 'Users', href: '/users'},
-    {text: 'Login', href: '/login'},
+    {text: 'Home', href: '/', isLogin: true},
+    {text: 'Users', href: '/users', isLogin: true},
+    // {text: 'Login', href: '/login'},
     {text: 'Registration', href: '/register'},
   ];
 

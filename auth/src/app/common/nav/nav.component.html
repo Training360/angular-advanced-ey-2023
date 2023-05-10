@@ -6,15 +6,25 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarID">
-            <div class="navbar-nav">
+            <div class="navbar-nav position-relative">
+              <ng-container *ngFor="let item of items">
                 <a
-                  *ngFor="let item of items"
+                  *ngIf="checkLogin(item)"
                   class="nav-link active"
                   aria-current="page"
                   [routerLink]="item.href">
                     {{ item.text }}
                 </a>
+              </ng-container>
             </div>
+            <a *ngIf="!(user$ | async); else logout" routerLink="/login" class="nav-link position-absolute end-0">
+              login
+            </a>
+            <ng-template #logout>
+              <a (click)="onLogout()" class="nav-link position-absolute end-0">
+                logout
+              </a>
+            </ng-template>
         </div>
     </div>
 </nav>
