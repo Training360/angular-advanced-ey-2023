@@ -6,7 +6,7 @@
       "id": 1,
       "firstName": "Charlie",
       "lastName": "Firpo",
-      "role": 0,
+      "role": 2,
       "token": ""
     },
     {
@@ -15,7 +15,7 @@
       "id": 2,
       "firstName": "Johnny",
       "lastName": "Firpo",
-      "role": 0,
+      "role": 1,
       "token": ""
     }
   ]

@@ -6,11 +6,16 @@ import { UsersComponent } from './page/users/users.component';
 import { UserEditorComponent } from './page/user-editor/user-editor.component';
 import { ForbiddenComponent } from './page/forbidden/forbidden.component';
 import { RegisterComponent } from './page/register/register.component';
+import { authGuard } from './guard/auth.guard';
+import { roleGuard } from './guard/role.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    canActivate: [
+      authGuard,
+    ],
   },
   {
     path: 'login',
@@ -23,14 +28,31 @@ const routes: Routes = [
   {
     path: 'users',
     component: UsersComponent,
+    canActivate: [
+      authGuard,
+      roleGuard,
+    ],
+    data: {
+      role: 2,
+    },
   },
   {
     path: 'users/edit/:id',
     component: UserEditorComponent,
+    canActivate: [
+      authGuard,
+      roleGuard,
+    ],
+    data: {
+      role: 1,
+    },
   },
   {
     path: 'users/create',
     component: UserEditorComponent,
+    canActivate: [
+      authGuard,
+    ],
   },
   {
     path: 'forbidden',

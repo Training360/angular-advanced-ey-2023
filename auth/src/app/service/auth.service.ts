@@ -79,6 +79,8 @@ export class AuthService {
   logout(): void {
     this.currentUserSubject.next(null);
     sessionStorage.removeItem(this.storageName);
+    this.lastToken = '';
+    this.router.navigate(['/login']);
   }
 
 }
