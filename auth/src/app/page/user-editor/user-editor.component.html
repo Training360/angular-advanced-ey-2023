@@ -1,5 +1,8 @@
 <div class="row">
-  <div class="col-6 offset-3">
-    <app-dynamic-form [settings]="formSettings"></app-dynamic-form>
+  <div *ngIf="user$ | async as user" class="col-6 offset-3">
+    <app-dynamic-form
+      [settings]="formSettings"
+      [formData]="user"
+      (formChanged)="onChanged($event)"></app-dynamic-form>
   </div>
 </div>

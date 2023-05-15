@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './page/register/register.component';
 import { JwtInterceptor } from './interceptor/jwt.interceptor';
 import { DynamicFormComponent } from './common/dynamic-form/dynamic-form.component';
+import { ConfigService } from './service/config.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,13 @@ import { DynamicFormComponent } from './common/dynamic-form/dynamic-form.compone
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
       multi: true,
-    }
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: ConfigService.init,
+      deps: [HttpClient],
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent]
 })

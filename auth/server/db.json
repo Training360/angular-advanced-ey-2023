@@ -2,11 +2,11 @@
   "users": [
     {
       "email": "cf@gmail.com",
-      "password": "$2a$10$EUhEax5E2.BJlqVgc213/eG7/hsfuj6XaPK8CW2T18a8ZjvXjM4ge",
+      "password": "$2a$10$2PJqVFxac5KlgQJWWdaimOpOMxWCFN8RALP5d5gxJn1Tt8lZh9acG",
       "id": 1,
       "firstName": "Charlie",
       "lastName": "Firpo",
-      "role": 2,
+      "role": "1",
       "token": ""
     },
     {
@@ -18,5 +18,78 @@
       "role": 1,
       "token": ""
     }
-  ]
+  ],
+  "settings": {
+    "userForm": [
+      {
+        "key": "firstName",
+        "label": "First Name",
+        "baseType": "input",
+        "type": "text",
+        "validators": [
+          "required",
+          "pattern:^[A-Z][A-Za-z .]{4,19}$"
+        ]
+      },
+      {
+        "key": "lastName",
+        "label": "Last Name",
+        "baseType": "input",
+        "type": "text",
+        "validators": [
+          "required",
+          "pattern:^[A-Z][A-Za-z .]{4,19}$"
+        ],
+        "errorMessages": {
+          "required": "Lastname is required!",
+          "pattern": "Lastname must be minimum 5 chars length!"
+        }
+      },
+      {
+        "key": "email",
+        "label": "Email",
+        "baseType": "input",
+        "type": "email",
+        "validators": [
+          "required",
+          "email"
+        ]
+      },
+      {
+        "key": "role",
+        "label": "Role",
+        "baseType": "select",
+        "options": [
+          {
+            "text": "Admin",
+            "value": 1
+          },
+          {
+            "text": "Editor",
+            "value": 2
+          },
+          {
+            "text": "Subscriber",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "key": "password",
+        "label": "Password",
+        "baseType": "input",
+        "type": "password",
+        "validators": [
+          "required",
+          "pattern:^[a-zA-Z0-9]{4,10}$"
+        ]
+      },
+      {
+        "key": "id",
+        "label": "",
+        "baseType": "input",
+        "type": "hidden"
+      }
+    ]
+  }
 }
