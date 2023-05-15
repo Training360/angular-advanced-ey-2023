@@ -10,9 +10,10 @@ import { LoginComponent } from './page/login/login.component';
 import { UsersComponent } from './page/users/users.component';
 import { UserEditorComponent } from './page/user-editor/user-editor.component';
 import { NavComponent } from './common/nav/nav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './page/register/register.component';
 import { JwtInterceptor } from './interceptor/jwt.interceptor';
+import { DynamicFormComponent } from './common/dynamic-form/dynamic-form.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +24,15 @@ import { JwtInterceptor } from './interceptor/jwt.interceptor';
     UsersComponent,
     UserEditorComponent,
     NavComponent,
-    RegisterComponent
+    RegisterComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {

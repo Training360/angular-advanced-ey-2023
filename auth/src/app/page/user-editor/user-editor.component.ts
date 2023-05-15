@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ConfigService } from 'src/app/service/config.service';
 
 @Component({
   selector: 'app-user-editor',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-editor.component.scss']
 })
 export class UserEditorComponent {
+  config = inject(ConfigService);
 
+  formSettings = this.config.userEditForm;
 }
