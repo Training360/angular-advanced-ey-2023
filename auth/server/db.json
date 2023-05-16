@@ -2,11 +2,11 @@
   "users": [
     {
       "email": "cf@gmail.com",
-      "password": "$2a$10$2PJqVFxac5KlgQJWWdaimOpOMxWCFN8RALP5d5gxJn1Tt8lZh9acG",
+      "password": "$2a$10$eVC8bLaNNloHA9P1mZdZp.ivvl1f7G5dDBVxUx9NovGOWTHYJHAbu",
       "id": 1,
       "firstName": "Charlie",
       "lastName": "Firpo",
-      "role": "1",
+      "role": "2",
       "token": ""
     },
     {
@@ -72,16 +72,6 @@
             "text": "Subscriber",
             "value": 3
           }
-        ]
-      },
-      {
-        "key": "password",
-        "label": "Password",
-        "baseType": "input",
-        "type": "password",
-        "validators": [
-          "required",
-          "pattern:^[a-zA-Z0-9]{4,10}$"
         ]
       },
       {
