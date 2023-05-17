@@ -15,6 +15,10 @@ import { RegisterComponent } from './page/register/register.component';
 import { JwtInterceptor } from './interceptor/jwt.interceptor';
 import { DynamicFormComponent } from './common/dynamic-form/dynamic-form.component';
 import { ConfigService } from './service/config.service';
+import { EffectsModule } from '@ngrx/effects';
+import { ProductEffects } from './store/product/product-effects';
+import { StoreModule } from '@ngrx/store';
+import { ProductReducer } from './store/product/ProductReducer';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,8 @@ import { ConfigService } from './service/config.service';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    EffectsModule.forRoot([ ProductEffects ]),
+    StoreModule.forRoot({ products: ProductReducer }),
   ],
   providers: [
     {
