@@ -9,12 +9,6 @@ import { Product } from "src/app/model/product";
 @Injectable()
 export class ProductEffects {
 
-  actions$ = inject(Actions);
-
-  productService = inject(ProductService);
-
-  store$ = inject(Store<any>);
-
   loadItems$ = createEffect( (): Observable<Action> => {
     return this.actions$.pipe(
       ofType(getItems),
@@ -34,5 +28,11 @@ export class ProductEffects {
       catchError( error => of({ type: ERROR_PRODUCT, error })),
     );
   });
+
+  constructor(
+    private actions$: Actions,
+    private productService: ProductService,
+    private store$: Store<any>,
+  ) {}
 
 }
