@@ -55,6 +55,13 @@ const routes: Routes = [
     ],
   },
   {
+    path: 'products',
+    loadComponent: () => import('./page/product/product.component').then( m => m.ProductComponent ),
+    canActivate: [
+      authGuard,
+    ],
+  },
+  {
     path: 'forbidden',
     component: ForbiddenComponent,
   },

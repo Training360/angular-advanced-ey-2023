@@ -26,7 +26,7 @@ import { ConfigService } from './service/config.service';
     UserEditorComponent,
     NavComponent,
     RegisterComponent,
-    DynamicFormComponent
+    DynamicFormComponent,
   ],
   imports: [
     BrowserModule,

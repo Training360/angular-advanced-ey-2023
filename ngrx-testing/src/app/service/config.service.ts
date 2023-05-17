@@ -45,7 +45,7 @@ export class ConfigService {
   navItems: INavItem[] = [
     { text: 'Home', href: '/', isLogin: true },
     { text: 'Users', href: '/users', isLogin: true },
-    // {text: 'Login', href: '/login'},
+    { text: 'Products', href: '/products' },
     { text: 'Registration', href: '/register' },
   ];
 
