@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/">Auth App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+            aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarID">
+            <div class="navbar-nav position-relative">
+              <ng-container *ngFor="let item of items">
+                <a
+                  *ngIf="checkLogin(item)"
+                  class="nav-link active"
+                  aria-current="page"
+                  [routerLink]="item.href">
+                    {{ item.text }}
+                </a>
+              </ng-container>
+            </div>
+            <a *ngIf="!(user$ | async); else logout" routerLink="/login" class="nav-link position-absolute end-0">
+              login
+            </a>
+            <ng-template #logout>
+              <a (click)="onLogout()" class="nav-link position-absolute end-0">
+                logout
+              </a>
+            </ng-template>
+        </div>
+    </div>
+</nav>
